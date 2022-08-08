@@ -1,0 +1,39 @@
+body{
+    place-items: center;
+    font-family:'Quicksand', sans-serif; 
+    margin: 0; 
+    gap:10px;
+}
+
+.Principal_card{
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 10px;
+}
+
+.title {
+    
+    border: solid 0.5px;
+    border-radius: 2px; 
+    grid-column: 1/3;
+    text-align: center;
+}
+.location {
+    border: solid 0.5px;
+    border-radius: 2px; 
+}
+.glass-efect{
+    background: #fafafa10;
+    backdrop-filter: blur(0.4rem);
+}
+
+.clouds {
+    border: solid 0.5px;
+    border-radius: 2px; 
+}
+.temperature {
+    border: solid 0.5px;
+    border-radius: 2px; 
+    grid-column: 1/3;
+}
