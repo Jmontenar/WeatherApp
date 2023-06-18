@@ -85,7 +85,7 @@ return (
     </div>
     </div>  
     <footer className='footer'>
-      <p>Desarrolllado por Jorge Monterrosa</p>
+      <p>Desarrollado por Jorge Monterrosa</p>
       <p>Todos los derechos reservados ©</p>
     </footer>
   </article>
