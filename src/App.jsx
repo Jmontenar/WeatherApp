@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-
 import Weather from './components/Weather'
 
 function App() {
@@ -19,10 +18,8 @@ function App() {
   }, [])
   return (
     <div className="App">
-
       <Weather lon={coords?.lon} lat={coords?.lat} />
-      
-      </div>
+    </div>
   )
 }
 

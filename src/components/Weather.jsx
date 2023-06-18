@@ -1,7 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Loading from './Loading'
-
 
 const Weather = ({lat, lon}) =>{
 
@@ -48,44 +46,49 @@ useEffect (() => {
 }, [lat,lon])
 console.log(weatherApp)
 const handleClick = () => setisCelsius(!isCelsius)
-if(isLoading){
-return <Loading />
-}else{
 
 return (
   <article className="Principal_card">
-    <section className="title"><h1>Weather App</h1></section>
-    <div className="location">
-    <h2>{`${weatherApp?.name},${weatherApp?.sys.country}`}</h2>
-    
+    <section className="title tracking-in-contract"><h1>Weather App</h1></section>
+    <div className='big_container'>
+    <div className="container_">
+    <div className="location text-focus-in">
+      <h1 className='focus-in-contract'>Ubicación</h1>
+      <div className='text-focus-in'>
+      <h2>{`${weatherApp?.name},${weatherApp?.sys.country}`}</h2>
         <img src={weatherApp && `http://openweathermap.org/img/wn/${weatherApp?.weather[0].icon}@2x.png`} alt="" />
-      <div>
         <h3>&#34;{weatherApp?.weather[0].description}&#34;</h3>
-        </div>
       </div>
-      <div className="clouds">
-      <ul>
-        <li><span>Wind Speed</span> {weatherApp?.wind.speed} m/s</li>
-        <li><span>Clouds</span> {weatherApp?.clouds.all} %</li>
-        <li><span>Pressure</span> {weatherApp?.main.pressure} hPa</li>
+      </div>
+      <div className="clouds text-focus-in">
+        <h1 className='focus-in-contract'>Nubosidad</h1>
+      <ul className='text-focus-in'>
+        <li><span>Velocidad del viento:</span> {weatherApp?.wind.speed} m/s</li>
+        <li><span>Nubes:</span> {weatherApp?.clouds.all} %</li>
+        <li><span>Presión:</span> {weatherApp?.main.pressure} hPa</li>
       </ul>
       </div>
-      <div className="temperature">
-      <ul>
+    </div>
+    <div className="temperature_container text-focus-in">
+    <div className="temperature text-focus-in">
+      <ul className='temperature_information'>
         <li><span>Temperature</span> {isCelsius ? temperature?.celsius : temperature?.fahrenheit}</li>
         <li><span>Maximun Temperature</span> {isCelsius ? tempretature_max?.celsius : tempretature_max?.fahrenheit}</li>
         <li><span>Minimun Temperature</span> {isCelsius ? tempretature_min?.celsius : tempretature_min?.fahrenheit}</li>
         <li><span>Feels like</span> {isCelsius ? feels_likes?.celsius : feels_likes?.fahrenheit}</li>
         <li><span>Humidity</span> {weatherApp?.main.humidity} %</li>
       </ul>
-      <button onClick={handleClick}>{isCelsius ? "Change to °F":"Change to °C"}</button>
-      </div>    
+      <div className="button_container">
+      <button className='btn' onClick={handleClick}>{isCelsius ? "Change to °F":"Change to °C"}</button>
+      </div>
+      </div>
+    </div>
+    </div>  
+    <footer className='footer'>
+      <p>Desarrolllado por Jorge Monterrosa</p>
+      <p>Todos los derechos reservados ©</p>
+    </footer>
   </article>
 )
 }
-}
-
-  
-
-
 export default Weather
